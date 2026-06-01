@@ -38,10 +38,10 @@ services:
         sync: false
 
   # ─── Frontend React/Vite (estático) ──────────────────────────────────────────
+  # Los static sites en Render siempre son gratis — no se especifica "plan".
   - type: web
     name: nutrigestion-web
     runtime: static
-    plan: free
     rootDir: frontend
     buildCommand: npm ci && npm run build
     staticPublishPath: ./dist
