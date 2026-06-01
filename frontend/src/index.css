@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 font-sans antialiased;
+  }
+
+  /* Forzar fondo blanco en todos los inputs — Tailwind base los deja transparentes */
+  input, select, textarea {
+    @apply bg-white text-gray-900;
+  }
+}
+
+@layer components {
+  /* Botón principal verde */
+  .btn-primario {
+    @apply bg-primario-600 hover:bg-primario-700 text-white font-medium px-4 py-2 rounded-lg
+           transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Botón secundario blanco con borde */
+  .btn-secundario {
+    @apply bg-white hover:bg-gray-50 text-gray-700 font-medium px-4 py-2 rounded-lg
+           border border-gray-300 transition-colors duration-150;
+  }
+
+  /* Botón de peligro rojo */
+  .btn-peligro {
+    @apply flex items-center gap-2 px-3 py-2 text-sm text-red-600
+           hover:bg-red-50 rounded-lg transition-colors;
+  }
+
+  /* Input estándar — fondo blanco explícito */
+  .input {
+    @apply w-full bg-white text-gray-900 border border-gray-300 rounded-lg px-3 py-2 text-sm
+           focus:outline-none focus:ring-2 focus:ring-primario-500 focus:border-transparent
+           placeholder-gray-400 transition;
+  }
+
+  /* Tarjeta blanca con sombra suave */
+  .tarjeta {
+    @apply bg-white rounded-xl shadow-sm border border-gray-100 p-5;
+  }
+
+  /* Etiqueta de campo */
+  .etiqueta {
+    @apply block text-sm font-medium text-gray-700 mb-1;
+  }
+
+  /* Badges de estado de citas */
+  .badge-programada { @apply text-xs font-medium px-2 py-1 rounded-full bg-blue-50 text-blue-700; }
+  .badge-completada { @apply text-xs font-medium px-2 py-1 rounded-full bg-primario-50 text-primario-700; }
+  .badge-cancelada  { @apply text-xs font-medium px-2 py-1 rounded-full bg-red-50 text-red-600; }
+}
